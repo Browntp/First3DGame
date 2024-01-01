@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://csvive0vhqxma"]
+
+[ext_resource type="ArrayMesh" uid="uid://bv5bnv3wkwcc0" path="res://assets/enemy.obj" id="1_ikhyk"]
+[ext_resource type="Script" path="res://enemy.gd" id="1_sundo"]
+
+[node name="Enemy" type="CharacterBody3D" groups=["enemy"]]
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_sundo")
+
+[node name="EnemyChar" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="EnemyChar"]
+mesh = ExtResource("1_ikhyk")
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+polygon = PackedVector2Array(-0.597767, 0.0490976, 0.518591, 0.0356894, 0.504158, 1.67017, 1.35458, 2.41191, 0.500845, 2.51087, -0.513653, 2.50345)
